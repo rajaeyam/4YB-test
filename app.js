@@ -12,14 +12,38 @@ function hide(){
     hover.classList.remove('active');
     modal.classList.remove('show');
 }
-function downloadVCard() {
-    var vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Mr. Mrs..\nTEL:0699999999\nEMAIL:yourmail@gmail.com\nEND:VCARD";
-    var blob = new Blob([vcard], { type: "text/vcard;charset=utf-8;" });
-    var link = document.createElement("a");
-    link.href = window.URL.createObjectURL(blob);
-    link.download = "contact.vcf";
-    link.click();
-}
 
+document.addEventListener('DOMContentLoaded', function() {
+    var saveBtn = document.getElementById("save-btn");
+    saveBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Informations de contact (à personnaliser)
+        var contact = {
+            name: "Mr. Mrs..",
+            phone: "0699999999",
+            email: "yourmail@gmail.com"
+        };
+
+        // Création du vCard
+        var vcard = "BEGIN:VCARD\nVERSION:3.0\n";
+        vcard += "FN:" + contact.name + "\n";
+        vcard += "TEL;TYPE=WORK,VOICE:" + contact.phone + "\n";
+        vcard += "EMAIL:" + contact.email + "\n";
+        vcard += "END:VCARD";
+
+        // Création du blob et de l'URL
+        var blob = new Blob([vcard], { type: "text/vcard;charset=utf-8;" });
+        var url = URL.createObjectURL(blob);
+
+        // Création et clic sur le lien de téléchargement
+        var downloadLink = document.createElement("a");
+        downloadLink.href = url;
+        downloadLink.download = contact.name + ".vcf";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    });
+});
 image.addEventListener('click', show);
 close.addEventListener('click', hide);
