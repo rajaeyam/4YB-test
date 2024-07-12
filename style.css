@@ -34,7 +34,7 @@ body{
     height: 270px;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to top, #00f2fe, red);
+    background-image: linear-gradient(to top, #00f2fe,black);
     clip-path: circle(400px at 50% -48.5%);
 }
 
