@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Informations de contact (à personnaliser)
         var contact = {
-            name: "Mr. Mrs..",
-            phone: "0699999999",
-            email: "yourmail@gmail.com"
+            name:" Mrs. Doha Ismaili",
+            phone: "0699999942",
+            email: "dohaismaili@gmail.com"
         };
 
         // Création du vCard
