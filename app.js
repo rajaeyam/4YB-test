@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Informations de contact (à personnaliser)
         var contact = {
-            name:" Mrs. Doha Ismaili",
-            phone: "0699999942",
-            email: "dohaismaili@gmail.com"
+            name:" Mr Lahcen ZOUHAYRE",
+            phone: "0670971552",
+            email: "amkoy.technology@gmail.com"
         };
 
         // Création du vCard
